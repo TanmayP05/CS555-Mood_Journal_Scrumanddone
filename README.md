@@ -19,7 +19,5 @@ Users can log daily mood entries, track habits, record expenses, and save recipe
 - Python 3.9+  
 - pip for package management  
 
-### Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/<your-username>/CS555-Mood_Journal_Scrumanddone.git
+### Running the project
+## run "uv run python app.py" in the terminal to start the project
