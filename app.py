@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
-from models import Habit, MoodEntry, Expense, Recipe  # noqa: E402
+from models import MoodEntry  # noqa: E402
 
 @app.route('/')
 def home():
