@@ -15,15 +15,6 @@ The project uses:
 
 Located in `models.py`:
 
-#### Habit
-```python
-class Habit(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    description = db.Column(db.Text)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    completed_dates = db.Column(db.Text)  # JSON string of dates
-```
 
 #### MoodEntry
 ```python
@@ -34,27 +25,9 @@ class MoodEntry(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 ```
 
-#### Expense
-```python
-class Expense(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(200), nullable=False)
-    amount = db.Column(db.Float, nullable=False)
-    paid_by = db.Column(db.String(100), nullable=False)
-    participants = db.Column(db.Text)  # Comma-separated names
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-```
 
-#### Recipe
-```python
-class Recipe(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(200), nullable=False)
-    ingredients = db.Column(db.Text, nullable=False)
-    instructions = db.Column(db.Text, nullable=False)
-    prep_time = db.Column(db.Integer)  # in minutes
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-```
+
+
 
 ## Basic Operations
 
