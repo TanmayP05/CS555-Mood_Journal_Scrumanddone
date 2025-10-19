@@ -1,4 +1,7 @@
 # CS555 Mood Journal
+![CI](https://github.com/Tpawar05/CS555-Mood_Journal_Scrumanddone/actions/workflows/ci.yml/badge.svg)
+![Quick Test](https://github.com/Tpawar05/CS555-Mood_Journal_Scrumanddone/actions/workflows/quick-test.yml/badge.svg)
+
 
 ## Project Description
 The **Mood Journal** is a web application designed to help users track and reflect on their moods, habits, and daily activities.  
