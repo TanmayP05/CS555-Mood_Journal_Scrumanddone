@@ -1,6 +1,7 @@
 # CS555 Mood Journal
-![CI](https://github.com/Tpawar05/CS555-Mood_Journal_Scrumanddone/actions/workflows/ci.yml/badge.svg)
-![Quick Test](https://github.com/Tpawar05/CS555-Mood_Journal_Scrumanddone/actions/workflows/quick-test.yml/badge.svg)
+![CI](https://github.com/Tpawar05/CS555-Mood_Journal_Scrumanddone/actions/workflows/ci.yml/badge.svg?branch=main)
+![Quick Test](https://github.com/Tpawar05/CS555-Mood_Journal_Scrumanddone/actions/workflows/quick-test.yml/badge.svg?branch=main)
+
 
 
 ## Project Description
