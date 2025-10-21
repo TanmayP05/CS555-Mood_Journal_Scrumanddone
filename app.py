@@ -18,21 +18,46 @@ def home():
 
 
 
-@app.route('/mood-journal', methods=['GET', 'POST'])
+@app.route("/mood-journal", methods=["GET", "POST"])
 def mood_journal():
-    if request.method == 'POST':
-        mood = request.form.get('mood', '').strip()
-        notes = request.form.get('notes', '').strip()
+    from datetime import datetime
 
-        if mood:
-            entry = MoodEntry(mood=mood, notes=notes or None)
-            db.session.add(entry)
-            db.session.commit()
+    if request.method == "POST":
+        title = request.form.get("title")
+        date_str = request.form.get("date")
+        rating = int(request.form.get("rating", 5))
+        notes = request.form.get("notes")
 
-        return redirect(url_for('mood_journal'))
+        # Convert date string to Python date
+        entry_date = datetime.strptime(date_str, "%Y-%m-%d").date() if date_str else datetime.utcnow().date()
 
-    entries = MoodEntry.query.order_by(MoodEntry.created_at.desc()).all()
-    return render_template('apps/mood_journal/index.html', page_id='mood-journal', entries=entries)
+        # Convert numeric rating to mood label
+        if rating <= 2:
+            mood = "Terrible"
+        elif rating <= 4:
+            mood = "Bad"
+        elif rating == 5:
+            mood = "Neutral"
+        elif rating <= 7:
+            mood = "Good"
+        elif rating <= 9:
+            mood = "Excellent"
+        else:
+            mood = "Amazing"
+
+        new_entry = MoodEntry(
+            title=title,
+            date=entry_date,
+            rating=rating,
+            mood=mood,
+            notes=notes
+        )
+        db.session.add(new_entry)
+        db.session.commit()
+        return redirect("/mood-journal")
+
+    entries = MoodEntry.query.order_by(MoodEntry.timestamp.desc()).all()
+    return render_template("mood_journal/index.html", entries=entries)
 
 
 
